@@ -1,14 +1,16 @@
 import React, {useContext} from 'react';
+import { ProductContext } from "../contexts/ProductContext";
+
 
 // Components
 import Product from './Product';
 
-import { ProductContext } from "../contexts/ProductContext";
  
 
 const Products = () => {
 
-	const [ products, addItem ] = useContext(ProductContext);
+	const { products, addItem } = useContext(ProductContext);
+
 
 	return (
 		<div className="products-container">
@@ -18,6 +20,8 @@ const Products = () => {
 					product={product}
 					addItem={addItem}
 				/>
+
+
 			))}
 		</div>
 	);
