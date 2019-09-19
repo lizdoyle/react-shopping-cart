@@ -7,11 +7,14 @@ import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
+<<<<<<< HEAD
 //Context
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from "./contexts/CartContext";
 
 
+=======
+>>>>>>> parent of ea7d9fa... initial push, steps 1-3 cmplt
 function App() {
 	const [products] = useState(data);
 	const [cart, setCart] = useState([]);
@@ -21,6 +24,7 @@ function App() {
 	};
 
 	return (
+<<<<<<< HEAD
 		
 		<div className="App">
 			<ProductContext.Provider value={{ products, addItem }}>
@@ -42,6 +46,28 @@ function App() {
 				</ProductContext.Provider>
 		</div>
 	
+=======
+		<div className="App">
+			<Navigation cart={cart} />
+
+			{/* Routes */}
+			<Route
+				exact
+				path="/"
+				render={() => (
+					<Products
+						products={products}
+						addItem={addItem}
+					/>
+				)}
+			/>
+
+			<Route
+				path="/cart"
+				render={() => <ShoppingCart cart={cart} />}
+			/>
+		</div>
+>>>>>>> parent of ea7d9fa... initial push, steps 1-3 cmplt
 	);
 }
 
